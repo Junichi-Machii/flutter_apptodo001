@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
   <!--
     If you are serving your web app in a path other than the root, change the
@@ -15,6 +15,8 @@
     the `--base-href` argument provided to `flutter build`.
   -->
   <base href="$FLUTTER_BASE_HREF">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
@@ -40,6 +42,34 @@
   <script src="flutter.js" defer></script>
 </head>
 <body>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.1.0/firebase-analytics.js";
+    import { getAuth } from 'https://www.gstatic.com/firebasejs/10.1.0/firebase-auth.js'
+
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDticBxAZVNFmWcQAtEKLypNTKhuqTRAR0",
+      authDomain: "flutter-app-todo001.firebaseapp.com",
+      projectId: "flutter-app-todo001",
+      storageBucket: "flutter-app-todo001.appspot.com",
+      messagingSenderId: "568728558880",
+      appId: "1:568728558880:web:5f8a09eaa9a07b1ff54b45",
+      measurementId: "G-EYN3W92RQW"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  </script>
+
+
   <script>
     window.addEventListener('load', function(ev) {
       // Download main.dart.js
